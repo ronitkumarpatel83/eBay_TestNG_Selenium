@@ -1,33 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-16T18:55:41 IST" name="Default suite" finished-at="2023-10-16T18:57:19 IST" duration-ms="98495">
+  <suite started-at="2023-10-16T20:40:17 IST" name="Default suite" finished-at="2023-10-16T20:43:10 IST" duration-ms="173270">
     <groups>
     </groups>
-    <test started-at="2023-10-16T18:55:41 IST" name="Default test" finished-at="2023-10-16T18:57:19 IST" duration-ms="98495">
+    <test started-at="2023-10-16T20:40:17 IST" name="Default test" finished-at="2023-10-16T20:43:10 IST" duration-ms="173270">
       <class name="testcases.TC_Basic_Functionality">
-        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T18:55:41 IST" name="setup" finished-at="2023-10-16T18:55:46 IST" duration-ms="5434" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T20:40:17 IST" name="setup" finished-at="2023-10-16T20:41:24 IST" duration-ms="67170" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="loginTo_eBayAccount()[pri:0, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T18:55:46 IST" name="loginTo_eBayAccount" finished-at="2023-10-16T18:56:17 IST" duration-ms="30384" status="PASS">
+        <test-method signature="loginTo_eBayAccount()[pri:0, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T20:41:24 IST" name="loginTo_eBayAccount" finished-at="2023-10-16T20:41:57 IST" duration-ms="32977" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTo_eBayAccount -->
-        <test-method signature="searchforAProduct()[pri:1, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T18:56:17 IST" name="searchforAProduct" finished-at="2023-10-16T18:56:34 IST" duration-ms="17025" status="PASS">
+        <test-method signature="searchforAProduct()[pri:1, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T20:41:57 IST" name="searchforAProduct" finished-at="2023-10-16T20:42:29 IST" duration-ms="31320" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchforAProduct -->
-        <test-method signature="addItemToCart()[pri:2, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T18:56:34 IST" name="addItemToCart" finished-at="2023-10-16T18:56:58 IST" duration-ms="23746" status="PASS">
+        <test-method signature="addItemToCart()[pri:2, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T20:42:29 IST" name="addItemToCart" finished-at="2023-10-16T20:42:29 IST" duration-ms="85" status="FAIL">
+          <exception class="org.openqa.selenium.InvalidSelectorException">
+            <message>
+              <![CDATA[Compound class names not permitted
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: Compound class names not permitted
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Build info: version: '4.14.0', revision: 'e5a96349ce'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '20.0.2'
+Driver info: driver.version: unknown
+at org.openqa.selenium.By$ByClassName.<init>(By.java:309)
+at org.openqa.selenium.By.className(By.java:100)
+at testcases.TC_Basic_Functionality.addItemToCart(TC_Basic_Functionality.java:114)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addItemToCart -->
-        <test-method signature="checkOutProcess()[pri:3, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T18:56:58 IST" name="checkOutProcess" finished-at="2023-10-16T18:57:19 IST" duration-ms="21856" status="PASS">
+        <test-method signature="checkOutProcess()[pri:3, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T20:42:29 IST" name="checkOutProcess" finished-at="2023-10-16T20:43:10 IST" duration-ms="41669" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkOutProcess -->
-        <test-method is-config="true" signature="closingBroswer()[pri:0, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T18:57:19 IST" name="closingBroswer" finished-at="2023-10-16T18:57:20 IST" duration-ms="358" status="PASS">
+        <test-method is-config="true" signature="closingBroswer()[pri:0, instance:testcases.TC_Basic_Functionality@175c2241]" started-at="2023-10-16T20:43:10 IST" name="closingBroswer" finished-at="2023-10-16T20:43:11 IST" duration-ms="304" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closingBroswer -->

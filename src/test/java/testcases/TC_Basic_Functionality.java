@@ -108,6 +108,8 @@ public class TC_Basic_Functionality {
 
 		driver.findElement(By.xpath("//span[contains(text(),'Add to cart')]")).click();
 		
+		//
+	
 		
 		//Verify Cart using text
 		String expCheckoutTitle = "Go to checkout";

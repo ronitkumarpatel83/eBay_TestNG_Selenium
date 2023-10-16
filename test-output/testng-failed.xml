@@ -5,7 +5,7 @@
     <classes>
       <class name="testcases.TC_Basic_Functionality">
         <methods>
-          <include name="checkOutProcess"/>
+          <include name="addItemToCart"/>
           <include name="closingBroswer"/>
           <include name="setup"/>
         </methods>
