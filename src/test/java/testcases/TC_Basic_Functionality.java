@@ -1,9 +1,9 @@
 package testcases;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -74,9 +74,18 @@ public class TC_Basic_Functionality {
 		 */
 		// Searching item in the search bar
 		driver.findElement(By.id("gh-ac")).sendKeys("Marshall Stanmore II Wireless Bluetooth Speaker, Black - NEW",Keys.ENTER);
-		WebElement item = driver.findElement(By.xpath("//*[@id=\"item59eb0b8471\"]/div/div[2]/a/div/span"));
-		JavascriptExecutor executor = (JavascriptExecutor)driver;
-		executor.executeScript("arguments[0].click();", item);
+		String ExpItemText = "Marshall Stanmore II Wireless Bluetooth Speaker, Black - NEW";
+		
+		List<WebElement> li = driver.findElements(By.xpath("//span[@role='heading']"));
+		System.out.println(li.size());
+		for(int i=1;i<=li.size()-1;i++) {
+			String itemText = li.get(i).getText();
+			if(itemText.equals(ExpItemText)) {
+				System.out.println("Get the item : "+itemText);
+				li.get(i).click();
+			}
+			
+		}
 		
 		// Handling the window
 		String parentHandle = driver.getWindowHandle();
@@ -88,8 +97,8 @@ public class TC_Basic_Functionality {
             }
         
         }
-		//Verify item 
-		String ExpItemText = "Marshall Stanmore II Wireless Bluetooth Speaker, Black - NEW";
+        //Verify item 
+		
 		WebElement ActItemText = driver.findElement(By.xpath("//*[@id=\"mainContent\"]/div[1]/div[1]/h1/span"));
 		System.out.println("Exp Item Name : "+ExpItemText+"\nAct Item Name : "+ ActItemText.getText());
 		
@@ -106,11 +115,9 @@ public class TC_Basic_Functionality {
 		 */
 		// Add to cart 
 
-		driver.findElement(By.xpath("//span[contains(text(),'Add to cart')]")).click();
-		
+		driver.findElement(By.xpath("//span[contains(text(),'Add to cart')]")).click();	
 		//
-	
-		
+		//
 		//Verify Cart using text
 		String expCheckoutTitle = "Go to checkout";
 		WebElement actCheckoutTitle = driver.findElement(By.xpath("//button[normalize-space()='Go to checkout']"));
@@ -140,7 +147,7 @@ public class TC_Basic_Functionality {
 		WebElement actPayPalAccText = driver.findElement(By.xpath("//h1[@id='headerText']"));
 		String expPayPalAccText = "Pay with PayPal";
 		// Verify the text of ending page
-		System.out.println("Expected PayPal Text : "+actPayPalAccText.getText()+"\n Expected PayPal Text : "+ expPayPalAccText);
+		System.out.println("Actual PayPal Text : "+actPayPalAccText.getText()+"\nExpected PayPal Text : "+ expPayPalAccText);
 		Assert.assertEquals(actPayPalAccText.getText(), expPayPalAccText);
 	}
 

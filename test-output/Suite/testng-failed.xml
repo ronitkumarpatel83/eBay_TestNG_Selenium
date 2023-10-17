@@ -9,7 +9,6 @@
           <include name="checkOutProcess"/>
           <include name="closingBroswer"/>
           <include name="setup"/>
-          <include name="searchforAProduct"/>
         </methods>
       </class> <!-- testcases.TC_Basic_Functionality -->
     </classes>
